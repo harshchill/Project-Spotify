@@ -1,0 +1,54 @@
+.border{
+    border: red 2px solid;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex{
+    display: flex;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.align-center{
+    align-items: center;
+}
+
+.bg-grey{
+    background-color: #121212;
+}
+
+.gradient{
+    background: linear-gradient(to bottom, #222222, #121212 20%);
+}
+
+.rounded{
+    border-radius: 8px;
+}
+
+.m-5{
+    margin: 0px 5px;
+    margin-top: 10px;
+}
+
+.p-15{
+    padding: 15px;
+}
+
+.w-20{
+    width: 20px;
+}
+
+.w35{
+    width: 35px;
+}
+
+
+.invert{
+    filter: invert(1);
+}
