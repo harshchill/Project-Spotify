@@ -259,15 +259,17 @@ body {
     align-items: center;
     gap: 20px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .seekbar {
     margin-top: 5px;
     width: 100%;
-    height: 2px;
+    height: 5px;
     background-color: #ffffff;
     border-radius: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 .circle{
