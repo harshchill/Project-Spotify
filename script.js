@@ -99,7 +99,6 @@ async function main() {
         let rect = document.querySelector(".seekbar").getBoundingClientRect();
         let x = e.clientX - rect.left;
         let percentage = x / rect.width;
-        console.log(percentage);
         document.querySelector(".circle").style.left = `${percentage * 100}%`;
         currentSong.currentTime = percentage * currentSong.duration;
     });
