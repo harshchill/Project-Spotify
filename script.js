@@ -1,5 +1,6 @@
 console.log("Code is running");
 let currentSong = new Audio();
+let songs;
 
 //function to format time
 function formatTime(seconds) {
@@ -13,7 +14,7 @@ function formatTime(seconds) {
 
 // fetching songs from the local folder
 async function getSongs() {
-    let songs = await fetch("http://127.0.0.1:5500/songs/");
+    songs = await fetch("http://127.0.0.1:5500/songs/");
     let response = await songs.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -102,5 +103,32 @@ async function main() {
         document.querySelector(".circle").style.left = `${percentage * 100}%`;
         currentSong.currentTime = percentage * currentSong.duration;
     });
+
+    //hamburger menu
+    document.querySelector(".hamburger").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "0";
+    });
+
+    //close menu
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-140%";
+    });
+
+    //add event listener to next button
+    next.addEventListener("click", () => {
+        let currentIndex = songs.indexOf(currentSong.src.split("/songs/")[1]);
+        if (currentIndex < songs.length - 1) {
+            playMusic(songs[currentIndex + 1]);
+        }
+    })
+
+    //add event listener to previous button
+    previous.addEventListener("click", () => {
+        let currentIndex = songs.indexOf(currentSong.src.split("/songs/")[1]);
+        if (currentIndex > 0) {
+            playMusic(songs[currentIndex - 1]);
+        }
+    })
+    
 }
 main();
