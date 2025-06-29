@@ -129,6 +129,17 @@ async function main() {
             playMusic(songs[currentIndex - 1]);
         }
     })
+
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change" ,  (e) => {
+        currentSong.volume = parseInt(e.target.value)/100;
+        if (e.target.value == 0){
+            document.querySelector(".range").getElementsByTagName("img")[0].src = "images/mute.png";
+        }
+        else {
+            document.querySelector(".range").getElementsByTagName("img")[0].src = "images/sound.png";
+        }
+    }
+    )
     
 }
 main();
